@@ -1,0 +1,2 @@
+customer_user_th = tc001@uu.com
+customer_pwd_th = 123456
