@@ -170,11 +170,6 @@ public class Demo{
 //		}
 //	}
 	public static void main(String[] args) {
-		int[] arr = {1,2,3};
-		//‘ΩΩÁ
-//		System.out.println(arr[3]);
-		//ø’÷∏’Î
-		arr=null;
-		System.out.println(arr[0]);
+		
 	}
 }
