@@ -1,6 +1,8 @@
 package ucn.ui;
 import java.util.Scanner;
 
+import bsh.org.objectweb.asm.Type;
+
 public class Demo{
 	//一个0.01m厚的纸，折叠多少次能到到珠穆朗玛峰的高度（8848m）
 //	public static void main(String[] args) {
@@ -331,31 +333,97 @@ public class Demo{
 //		return monSum;
 //	}
 	//打印杨辉三角，行数用键盘录入
-	public static void main(String[] args) {
-		Scanner sc = new Scanner(System.in);
-		System.out.println("请输入行数：");
-		int line = sc.nextInt();
-		sanJiao(line);
-		
-	}
-	public static void sanJiao(int value) {
-		int[][] arr = new int[value][value];
-		for(int x=0;x<arr.length;x++) {
-			arr[x][0]=1;
-			arr[x][x]=1;
-		}
-		for(int x =2;x<arr.length;x++) {
-			for(int y=1;y<=x-1;y++) {
-				arr[x][y]=arr[x-1][y-1]+arr[x-1][y];
-			}
-		}
-		for(int i =0;i<arr.length;i++) {
-			for(int j=0;j<=i;j++) {
-				System.out.print(arr[i][j]+" ");
-			}
-			System.out.println();
-		}
-	}
+//	public static void main(String[] args) {
+//		Scanner sc = new Scanner(System.in);
+//		System.out.println("请输入行数：");
+//		int line = sc.nextInt();
+//		sanJiao(line);
+//		
+//	}
+//	public static void sanJiao(int value) {
+//		int[][] arr = new int[value][value];
+//		for(int x=0;x<arr.length;x++) {
+//			arr[x][0]=1;
+//			arr[x][x]=1;
+//		}
+//		for(int x =2;x<arr.length;x++) {
+//			for(int y=1;y<=x-1;y++) {
+//				arr[x][y]=arr[x-1][y-1]+arr[x-1][y];
+//			}
+//		}
+//		for(int i =0;i<arr.length;i++) {
+//			for(int j=0;j<=i;j++) {
+//				System.out.print(arr[i][j]+" ");
+//			}
+//			System.out.println();
+//		}
+//	}
+	/*
+	 * 数据加密规则：数据是小于8位的整数
+	 * 首先将数据倒序，然后将每位数字都加上5，在用和除以10的余数代替该数字
+	 * 最后将第一位和最后一位数字交换，再将加密后的结果在控制台打印
+	 * */
+//	public static void main(String[] args) {
+//		Scanner sc = new Scanner(System.in);
+//		System.out.println("请输入一个小于8位的整数：");
+//		int value = sc.nextInt();
+//		jiaMi(value);
+//		String result = jiaMi2(value);
+//		System.out.println("加密后的是："+result);
+//		
+//	}
+//	//直接打印
+//	public static void jiaMi(int value) {
+//		int[] arr = new int[8];
+//		int index = 0;
+//		//将输入的数据倒序存入数组中
+//		while(value>0) {
+//			arr[index]=value%10;
+//			index++;
+//			value/=10;
+//		}
+//		
+//		//将数组中的每一个元素加5，再用和除以10的余数取代该元素
+//		for(int x=0;x<index;x++) {
+//			arr[x]=(arr[x]+5)%10;
+//		}
+//		//将第一位和最后一位交换
+//		int temp;
+//		temp = arr[0];
+//		arr[0]=arr[index-1];
+//		arr[index-1]= temp;
+//		//输出结果
+//		for(int x =0;x<index;x++) {
+//			System.out.print(arr[x]);
+//		}
+//		System.out.println();
+//	}
+//	//按string类型返回
+//	public static String jiaMi2(int value) {
+//		int[] arr = new int[8];
+//		int index = 0;
+//		while(value >0) {
+//			arr[index] = value%10;
+//			index++;
+//			value/=10;
+//		}
+//		for(int x=0;x<index;x++) {
+//			arr[x]+=5;
+//			arr[x]%=10;
+//		}
+//		int temp=arr[0];
+//		arr[0]=arr[index-1];
+//		arr[index-1]=temp;
+//		//拼接成字符串
+//		String str="";
+//		for(int x=0;x<index;x++) {
+//			str+=arr[x];
+//		}
+//		return str;
+//	}
+	
+	
+	
 	
 	
 }
